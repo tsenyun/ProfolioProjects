@@ -307,7 +307,6 @@ FROM PopvsVac
 
 -- Ctrl+shift+R,refresh, to get the red underlines off 
 
-
 -- Looking at Country with Highest Infection Rate compared to Population
 Create View HighestInfectionRateCountry AS
 SELECT location, population, 
@@ -318,7 +317,6 @@ FROM ProfolioProject..CovidDeaths
 GROUP BY location, population
 --ORDER BY PercentPopulationInfected DESC
 
-
 -- Showing Countries with Highest Death Count per Population
 Create View TotalDeathCountCountry AS
 SELECT location,
@@ -328,7 +326,6 @@ FROM ProfolioProject..CovidDeaths
 WHERE continent is NOT NULL
 GROUP BY location
 --ORDER BY TotalDeathCount DESC
-
 
 Create View TotalDeathCountContinent AS
 SELECT continent,
