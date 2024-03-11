@@ -155,20 +155,6 @@ ORDER BY TotalDeathCount DESC
 
 -- Let's break things down by continent
 
-SELECT location,
-	MAX(cast(total_deaths as INT)) AS TotalDeathCount
-FROM PortfolioProject..CovidDeaths
---WHERE Location like '%Germany%'
-WHERE continent is NULL AND
-	location <> 'High income' AND
-	location <> 'Upper middle income' AND
-	location <> 'lower middle income' AND
-	location <> 'low income'
-GROUP BY location
-ORDER BY TotalDeathCount DESC
-
--- somehow the income info is also here???
-
 SELECT continent,
 	MAX(cast(total_deaths as INT)) AS TotalDeathCount
 FROM PortfolioProject..CovidDeaths
