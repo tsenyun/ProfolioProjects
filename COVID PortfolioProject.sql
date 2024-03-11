@@ -1,15 +1,15 @@
 
 SELECT *
-FROM ProfolioProject..CovidDeaths
+FROM PortfolioProject..CovidDeaths
 WHERE continent is NOT NULL
 ORDER BY 3,4
 
 --SELECT *
---FROM ProfolioProject..CovidVaccinations
+--FROM PortfolioProject..CovidVaccinations
 --ORDER BY 3,4
 
 SELECT location, date, total_cases, new_cases, total_deaths, population
-FROM ProfolioProject..CovidDeaths
+FROM PortfolioProject..CovidDeaths
 WHERE continent is NOT NULL
 ORDER BY 1,2
 
@@ -22,7 +22,7 @@ ORDER BY 1,2
 -- Shows likelihood of dying if you contract covid in a given country
 
 SELECT location, date, total_cases, total_deaths, (cast(total_deaths as float)/cast (total_cases as float))*100 AS DeathPercentage
-FROM ProfolioProject..CovidDeaths
+FROM PortfolioProject..CovidDeaths
 WHERE 
 --Location like '%Germany%' AND 
 continent is NOT NULL
@@ -113,7 +113,7 @@ AS (SELECT iso_code,
 	weekly_hosp_admissions,
 	weekly_hosp_admissions_per_million
            ORDER BY iso_code) AS DuplicateCount
-    FROM ProfolioProject..CovidDeaths)
+    FROM PortfolioProject..CovidDeaths)
 DELETE FROM CTE
 WHERE duplicatecount > 1;
 
@@ -123,7 +123,7 @@ WHERE duplicatecount > 1;
 -- Shows what percentage of population got Covid
 
 SELECT location, date, total_cases, population, (cast (total_cases as float)/population)*100 AS PercentPopulationInfected
-FROM ProfolioProject..CovidDeaths
+FROM PortfolioProject..CovidDeaths
 --WHERE Location like '%Germany%'
 ORDER BY 1,2
 
@@ -134,7 +134,7 @@ ORDER BY 1,2
 SELECT location, population, 
 	MAX(total_cases) AS HighestInfectionCount,
 	MAX(total_cases/population)*100 AS PercentPopulationInfected
-FROM ProfolioProject..CovidDeaths
+FROM PortfolioProject..CovidDeaths
 --WHERE Location like '%Germany%'
 GROUP BY location, population
 ORDER BY PercentPopulationInfected DESC
@@ -145,7 +145,7 @@ ORDER BY PercentPopulationInfected DESC
 
 SELECT location,
 	MAX(cast(total_deaths as INT)) AS TotalDeathCount
-FROM ProfolioProject..CovidDeaths
+FROM PortfolioProject..CovidDeaths
 --WHERE Location like '%Germany%'
 WHERE continent is NOT NULL
 GROUP BY location
@@ -157,7 +157,7 @@ ORDER BY TotalDeathCount DESC
 
 SELECT location,
 	MAX(cast(total_deaths as INT)) AS TotalDeathCount
-FROM ProfolioProject..CovidDeaths
+FROM PortfolioProject..CovidDeaths
 --WHERE Location like '%Germany%'
 WHERE continent is NULL AND
 	location <> 'High income' AND
@@ -171,7 +171,7 @@ ORDER BY TotalDeathCount DESC
 
 SELECT continent,
 	MAX(cast(total_deaths as INT)) AS TotalDeathCount
-FROM ProfolioProject..CovidDeaths
+FROM PortfolioProject..CovidDeaths
 --WHERE Location like '%Germany%'
 WHERE continent is not NULL
 GROUP BY continent
@@ -186,7 +186,7 @@ ORDER BY TotalDeathCount DESC
 
 SELECT continent,
 	MAX(cast(total_deaths as INT)) AS TotalDeathCount
-FROM ProfolioProject..CovidDeaths
+FROM PortfolioProject..CovidDeaths
 --WHERE Location like '%Germany%'
 WHERE continent is not NULL
 GROUP BY continent
@@ -201,7 +201,7 @@ SELECT
 	SUM(cast(new_cases as INT)) AS Total_cases, 
 	SUM(cast(new_deaths as INT)) AS Total_deaths,
 	SUM(cast(new_deaths as INT))/SUM(new_cases)*100 AS DeathPercentage
-FROM ProfolioProject..CovidDeaths
+FROM PortfolioProject..CovidDeaths
 WHERE continent is not NULL
 --GROUP BY date
 ORDER BY 1,2
@@ -221,8 +221,8 @@ SELECT Dea.continent, Dea.location, Dea.date, Dea.population, Vac.new_vaccinatio
 	OVER (Partition BY Dea.location ORDER BY Dea.location, Dea.date)
 	AS RollingPeopleVaccinated
 --, (RollingPeopleVaccinated/Population)*100 ->cannot do it when you just created it
-FROM ProfolioProject..CovidDeaths Dea
-JOIN ProfolioProject..CovidVaccinations Vac 
+FROM PortfolioProject..CovidDeaths Dea
+JOIN PortfolioProject..CovidVaccinations Vac 
 	ON Dea.location = Vac.location
 	AND Dea.date = Vac.date
 WHERE Dea.continent is NOT NULL
@@ -239,8 +239,8 @@ SELECT Dea.continent, Dea.location, Dea.date, Dea.population, Vac.new_vaccinatio
 	OVER (Partition BY Dea.location ORDER BY Dea.location, Dea.date)
 	AS RollingPeopleVaccinated
 --, (RollingPeopleVaccinated/Population)*100 ->cannot do it when you just created it
-FROM ProfolioProject..CovidDeaths Dea
-JOIN ProfolioProject..CovidVaccinations Vac 
+FROM PortfolioProject..CovidDeaths Dea
+JOIN PortfolioProject..CovidVaccinations Vac 
 	ON Dea.location = Vac.location
 	AND Dea.date = Vac.date
 WHERE Dea.continent is NOT NULL
@@ -269,8 +269,8 @@ SELECT Dea.continent, Dea.location, Dea.date, Dea.population, Vac.new_vaccinatio
 	OVER (Partition BY Dea.location ORDER BY Dea.location, Dea.date)
 	AS RollingPeopleVaccinated
 --, (RollingPeopleVaccinated/Population)*100 ->cannot do it when you just created it
-FROM ProfolioProject..CovidDeaths Dea
-JOIN ProfolioProject..CovidVaccinations Vac 
+FROM PortfolioProject..CovidDeaths Dea
+JOIN PortfolioProject..CovidVaccinations Vac 
 	ON Dea.location = Vac.location
 	AND Dea.date = Vac.date
 WHERE Dea.continent is NOT NULL
@@ -295,8 +295,8 @@ SELECT Dea.continent, Dea.location, Dea.date, Dea.population, Vac.new_vaccinatio
 	SUM(CONVERT(INT,vac.new_vaccinations)) 
 	OVER (Partition BY Dea.location ORDER BY Dea.location, Dea.date)
 	AS RollingPeopleVaccinated
-FROM ProfolioProject..CovidDeaths Dea
-JOIN ProfolioProject..CovidVaccinations Vac 
+FROM PortfolioProject..CovidDeaths Dea
+JOIN PortfolioProject..CovidVaccinations Vac 
 	ON Dea.location = Vac.location
 	AND Dea.date = Vac.date
 WHERE Dea.continent is NOT NULL
@@ -312,7 +312,7 @@ Create View HighestInfectionRateCountry AS
 SELECT location, population, 
 	MAX(total_cases) AS HighestInfectionCount,
 	MAX(total_cases/population)*100 AS PercentPopulationInfected
-FROM ProfolioProject..CovidDeaths
+FROM PortfolioProject..CovidDeaths
 --WHERE Location like '%Germany%'
 GROUP BY location, population
 --ORDER BY PercentPopulationInfected DESC
@@ -321,7 +321,7 @@ GROUP BY location, population
 Create View TotalDeathCountCountry AS
 SELECT location,
 	MAX(cast(total_deaths as INT)) AS TotalDeathCount
-FROM ProfolioProject..CovidDeaths
+FROM PortfolioProject..CovidDeaths
 --WHERE Location like '%Germany%'
 WHERE continent is NOT NULL
 GROUP BY location
@@ -330,7 +330,7 @@ GROUP BY location
 Create View TotalDeathCountContinent AS
 SELECT continent,
 	MAX(cast(total_deaths as INT)) AS TotalDeathCount
-FROM ProfolioProject..CovidDeaths
+FROM PortfolioProject..CovidDeaths
 --WHERE Location like '%Germany%'
 WHERE continent is not NULL
 GROUP BY continent
@@ -342,14 +342,14 @@ SELECT
 	SUM(cast(new_cases as INT)) AS Total_cases, 
 	SUM(cast(new_deaths as INT)) AS Total_deaths,
 	SUM(cast(new_deaths as INT))/SUM(new_cases)*100 AS DeathPercentage
-FROM ProfolioProject..CovidDeaths
+FROM PortfolioProject..CovidDeaths
 WHERE continent is not NULL
 GROUP BY date
 --ORDER BY 1,2
 
 Create View DeathPercentage AS
 SELECT location, date, total_cases, total_deaths, (cast(total_deaths as float)/cast (total_cases as float))*100 AS DeathPercentage
-FROM ProfolioProject..CovidDeaths
+FROM PortfolioProject..CovidDeaths
 WHERE 
 --Location like '%Germany%' AND 
 continent is NOT NULL
@@ -357,6 +357,6 @@ continent is NOT NULL
 
 Create View PercentPopulationInfected AS
 SELECT location, date, total_cases, population, (cast (total_cases as float)/population)*100 AS PercentPopulationInfected
-FROM ProfolioProject..CovidDeaths
+FROM PortfolioProject..CovidDeaths
 --WHERE Location like '%Germany%'
 --ORDER BY 1,2
