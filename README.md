@@ -5,7 +5,7 @@ Welcome to my SQL Projects Repository! This repository showcases a variety of SQ
 ## 💡Project List
 Explore the projects included in this repository:
 
-### 📊COVID Data Analysis
+### 📊[COVID Data Analysis](https://github.com/tsenyun/SQL/blob/main/SQL%20Data%20Exploration%20-%20COVID%20Project.sql)
 - Description:
 This project focuses on analyzing COVID-19 data to understand key metrics such as case numbers, mortality rates, and vaccination coverage. The project demonstrates the use of SQL for extracting insights and Excel for initial data preparation.
 
@@ -19,7 +19,7 @@ This project focuses on analyzing COVID-19 data to understand key metrics such a
 - Usage:
 This project is valuable for public health researchers, data analysts, and policymakers seeking to understand the impact of COVID-19 through comprehensive data analysis.
 
-### 🏠Data Cleaning: Nashville Housing
+### 🏠[Data Cleaning: Nashville Housing](https://github.com/tsenyun/SQL/blob/main/SQL%20Data%20Cleaning%20-%20NashvilleHousing%20Project.sql)
 - Description:
 The Nashville Housing project focuses on cleaning and preparing a real estate dataset. This project demonstrates the application of SQL for data cleaning and management tasks, ensuring the dataset's readiness for analysis.
 
