@@ -1,11 +1,11 @@
-## 🗄️ SQL Projects Collection
-### 🔎 Introduction
+# 🗄️SQL Projects Collection
+## 🔎Introduction
 Welcome to my SQL Projects Repository! This repository showcases a variety of SQL-based projects that I've developed to demonstrate my data manipulation, cleaning, and analysis skills. Each project tackles different datasets and challenges, showcasing my proficiency in SQL and data management techniques.
 
-### 💡 Project List
+## 💡Project List
 Explore the projects included in this repository:
 
-#### 📊 COVID Data Analysis
+### 📊COVID Data Analysis
 - Description:
 This project focuses on analyzing COVID-19 data to understand key metrics such as case numbers, mortality rates, and vaccination coverage. The project demonstrates the use of SQL for extracting insights and Excel for initial data preparation.
 
@@ -19,7 +19,7 @@ This project focuses on analyzing COVID-19 data to understand key metrics such a
 - Usage:
 This project is valuable for public health researchers, data analysts, and policymakers seeking to understand the impact of COVID-19 through comprehensive data analysis.
 
-#### 🏠 Data Cleaning: Nashville Housing
+### 🏠Data Cleaning: Nashville Housing
 - Description:
 The Nashville Housing project focuses on cleaning and preparing a real estate dataset. This project demonstrates the application of SQL for data cleaning and management tasks, ensuring the dataset's readiness for analysis.
 
@@ -34,8 +34,8 @@ The Nashville Housing project focuses on cleaning and preparing a real estate da
 - Usage:
 This project is essential for data professionals working with real estate datasets, providing practical examples of data cleaning techniques to ensure data quality and consistency.
 
-### 🛠️ Skills Demonstrated
-#### Data Management and Analysis:
+## 🛠️Skills Demonstrated
+### Data Management and Analysis:
 - **SQL Proficiency:** 
 
 Advanced SQL querying, data manipulation, and extraction techniques for analyzing datasets.
@@ -52,7 +52,7 @@ Organizing and preparing datasets using tools like Excel and SQL for accurate an
 
 Utilizing SQL to explore datasets, uncover patterns, and generate insights.
 
-#### Technical Skills: 
+### Technical Skills: 
 - **SQL:** 
 
 Proficient in writing complex SQL queries for data extraction and analysis.
