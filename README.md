@@ -1,8 +1,6 @@
 # 🗄️SQL Projects Collection
 ## 🔎Introduction
-Welcome to my SQL Projects Repository!  
-This repository showcases a variety of SQL-based projects that I've developed to demonstrate my data manipulation, cleaning, and analysis skills.  
-Each project tackles different datasets and challenges, showcasing my proficiency in SQL and data management techniques.
+Welcome to my SQL Projects Repository! This repository showcases a variety of SQL-based projects that I've developed to demonstrate my data manipulation, cleaning, and analysis skills. Each project tackles different datasets and challenges, showcasing my proficiency in SQL and data management techniques.
 
 ## 💡Project List
 Explore the projects included in this repository:
