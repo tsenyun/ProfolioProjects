@@ -7,14 +7,14 @@ Explore the projects included in this repository:
 
 ### 📊[COVID Data Analysis](https://github.com/tsenyun/SQL/blob/main/SQL%20Data%20Exploration%20-%20COVID%20Project.sql)
 - Description:
-This project focuses on analyzing COVID-19 data to understand key metrics such as case numbers, mortality rates, and vaccination coverage. The project demonstrates the use of SQL for extracting insights and Excel for initial data preparation.
+This project focuses on analyzing COVID-19 data to understand key metrics such as case numbers, mortality rates, and vaccination coverage. The project demonstrates the use of **SQL** for extracting insights and Excel for initial data preparation.
 
 - Features:
   - Data Cleaning and Organization:
-      - Utilized Excel to clean and organize 85,171 records of COVID death and vaccination data.
+      - Utilized **Excel** to clean and organize 85,171 records of COVID death and vaccination data.
       - Ensured data accuracy and consistency through validation and transformation techniques.
   - SQL Analysis:
-      - Employed SQL queries (JOIN, Aliases, Aggregation functions, and WHERE clauses) to analyze the dataset.
+      - Employed **SQL queries (JOIN, Aliases, Aggregation functions, and WHERE clauses)** to analyze the dataset.
       - Generated insights to support data-driven decision-making.
 - Usage:
 This project is valuable for public health researchers, data analysts, and policymakers seeking to understand the impact of COVID-19 through comprehensive data analysis.
@@ -25,7 +25,7 @@ The Nashville Housing project focuses on cleaning and preparing a real estate da
 
 - Features:
   - Data Cleaning:
-      - Cleaned and managed 56,477 records in the "NashvilleHousing" dataset using SQL.
+      - Cleaned and managed 56,477 records in the "NashvilleHousing" dataset using **SQL**.
       - Standardized data formats and populated missing values.
       - Splitted address fields into separate columns for better analysis.
       - Converted boolean indicators ('Y' and 'N') into more descriptive terms ('Yes' and 'No').
